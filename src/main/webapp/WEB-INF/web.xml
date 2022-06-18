@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+	id="WebApp_ID" 
+	version="4.0"
+>
+  <display-name>LinkPreviewer</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>bannerSiteSearch.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- *** Servlets *** -->
+  <servlet>
+  	<servlet-name>controllerServlet</servlet-name>
+  	<servlet-class>servletpack.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>controllerServlet</servlet-name>
+  	<url-pattern>/getPreview</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+  	<servlet-name>shortURLMapperServlet</servlet-name>
+  	<servlet-class>servletpack.ShortURLMapper</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>shortURLMapperServlet</servlet-name>
+  	<url-pattern>/shorturl/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>resultSenderServlet</servlet-name>
+  	<servlet-class>servletpack.ResultSender</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>resultSenderServlet</servlet-name>
+  	<url-pattern>/result</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>removeShortURLDataServlet</servlet-name>
+  	<servlet-class>servletpack.RemoveShortURLData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>removeShortURLDataServlet</servlet-name>
+  	<url-pattern>/result/deactivate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>bannerSiteSaverServlet</servlet-name>
+  	<servlet-class>servletpack.BannerSiteSaver</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>bannerSiteSaverServlet</servlet-name>
+  	<url-pattern>/bannerSite/bannerSiteSaver</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userSaverServlet</servlet-name>
+  	<servlet-class>servletpack.UserSaver</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userSaverServlet</servlet-name>
+  	<url-pattern>/bannerSite/userSaver</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- *** Filters *** -->
+  <filter>
+  	<filter-name>responseSpeedMonitor</filter-name>
+  	<filter-class>filterpack.ResponseSpeedPrinter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>responseSpeedMonitor</filter-name>
+  	<url-pattern>/getPreview</url-pattern>
+  </filter-mapping>
+  
+</web-app>

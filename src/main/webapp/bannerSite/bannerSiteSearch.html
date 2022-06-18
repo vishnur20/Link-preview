@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Banner-Site Search</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+		<script src="../jquery-3.6.0.min.js"></script>
+		<script src="./bannerSiteSearch.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<form method="GET" action="./bannerSitePage.jsp">
+				<label for="search-bar"><b>Search Banner Site:</b></label>
+				<br/>
+				<input id="search-bar" class="form-control" type="text" name="url">
+				<br/>
+				<button id="search" class="btn-primary">Search</button>
+			</form>
+			<br/>
+			<button id="create-banner-site" class="btn-success">Create banner site</button>
+		</div>
+	</body>
+</html>
