@@ -1,2 +1,1 @@
-# This is a simple (eclipse) link-preview project stacked with 
-# html, js, servlet, jsp
+# This is a simple link-preview project (eclipse) stacked with "html, js, servlet, jsp"
